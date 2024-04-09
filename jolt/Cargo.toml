@@ -1,0 +1,36 @@
+[package]
+name = "jolt-benchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [
+    "sha2-chain-guest",
+    "sha3-chain-guest",
+    "sha2-guest",
+    "sha3-guest",
+    "fibonacci-guest",
+    "bigmem-guest",
+]
+
+[profile.release]
+debug = 1
+codegen-units = 1
+lto = "fat"
+
+[dependencies]
+jolt-sdk = { git = "https://github.com/a16z/Lasso", branch = "jolt", features = ["std"]}
+utils = { path = "../utils" }
+
+sha2-chain-guest = { path = "./sha2-chain-guest" }
+sha3-chain-guest = { path = "./sha3-chain-guest" }
+sha2-guest = { path = "./sha2-guest" }
+sha3-guest = { path = "./sha3-guest" }
+fibonacci-guest = { path = "./fibonacci-guest" }
+bigmem-guest = { path = "./bigmem-guest" }
+
+[patch.crates-io]
+ark-ff = { git = "https://github.com/a16z/arkworks-algebra", branch = "optimize/field-from-u64" }
+ark-ec = { git = "https://github.com/a16z/arkworks-algebra", branch = "optimize/field-from-u64" }
+ark-serialize = { git = "https://github.com/a16z/arkworks-algebra", branch = "optimize/field-from-u64" }
+

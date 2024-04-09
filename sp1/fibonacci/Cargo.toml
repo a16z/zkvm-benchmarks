@@ -1,0 +1,8 @@
+[workspace]
+[package]
+version = "0.1.0"
+name = "fibonacci"
+edition = "2021"
+
+[dependencies]
+sp1-zkvm = { git = "https://github.com/succinctlabs/sp1.git", rev = "a81d0894f58b85d5a449dda873ce7a16a0b2d1f1" }

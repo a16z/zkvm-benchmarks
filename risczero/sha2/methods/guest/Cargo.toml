@@ -1,0 +1,12 @@
+[package]
+name = "sha2-bench"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+
+[dependencies]
+# If you want to try (experimental) std support, add `features = [ "std" ]` to risc0-zkvm
+risc0-zkvm = { version = "0.20.1", default-features = false }
+sha2 = { version = "0.10.8", default-features = false }
+
