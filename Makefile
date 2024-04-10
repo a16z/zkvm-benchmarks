@@ -8,7 +8,7 @@ bench-jolt:
 
 bench-sp1:
 	make build-sp1
-	cd sp1 && RUSTFLAGS="-C target-cpu=native" cargo run --release
+	cd sp1 && RUSTFLAGS="-C target-cpu=native" cargo run --release --features nightly-features
 
 build-sp1:
 	cd sp1/fibonacci && cargo prove build
